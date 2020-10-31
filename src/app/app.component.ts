@@ -1,3 +1,5 @@
+import { TravelRequestComponent } from './travel-request/travel-request.component';
+
 import { Component } from '@angular/core';
 
 @Component({
@@ -8,3 +10,6 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Edward Lin';
 }
+
+
+

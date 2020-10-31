@@ -1,0 +1,52 @@
+<div class="row">
+  <div class="col-md-4"> </div>
+  <div class="col-md-4">
+    <form #requestForm="ngForm" (ngSubmit)="onSubmit(requestForm)">
+      <div class="form-group">
+        <label>Origination</label>
+        <select name="origination" class="form-control" [(ngModel)]="model.origination">>
+          <option value="">--Select an airport--</option>
+          <option *ngFor="let Code of AirportCodes" [value]="Code">
+            {{Code}}
+          </option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Destination</label>
+        <select class="form-control" name="destination" [(ngModel)]="model.destination">
+          <option value="">--Select a airport--</option>
+          <option *ngFor="let code of AirportCodes" [value]="code">
+            {{code}}
+          </option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Departure Date</label>
+        <input type="date" class="form-control" name="departureDate" [(ngModel)]="model.departureDate">
+      </div>
+
+      <div class="form-group">
+        <label>Return Date</label>
+        <input type="date" class="form-control" name="returnDate" [(ngModel)]="model.returnDate">
+      </div>
+
+      <div class="form-group">
+        <label>Number of Travelers</label>
+        <input type="number" min="0" class="form-control" name="numberOfTravelers"
+          [(ngModel)]="model.numberOfTravelers">
+      </div>
+
+      <div class="form-group">
+        <button class="btn btn-success">Submit</button>
+      </div>
+      <div class="form-group">
+        <label for="total_cost_of_trip">Total cost of travel:</label><br>
+        <input type="txt" class="form-control" name="total_cost_of_trip" [(ngModel)]="model.totalCost" readonly>
+      </div>
+    </form>
+
+  </div>
+  <div class="col-md-4"></div>
+</div>
